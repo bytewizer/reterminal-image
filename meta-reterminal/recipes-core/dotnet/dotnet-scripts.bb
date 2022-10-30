@@ -12,11 +12,15 @@ RDEPENDS:${PN} = "\
     zlib \
 "
 
+FILES:${PN} += "\
+    ${datadir}/ \
+"
+
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 do_install() {    
-    install -d ${D}${bindir}
-    install -m 0770 ${WORKDIR}/dotnet-install.sh ${D}/${bindir}/dotnet-install.sh
-    install -m 0770 ${WORKDIR}/getvsdbgsh ${D}/${bindir}/GetVsDbg.sh
+    install -d ${D}${datadir}
+    install -m 0770 ${WORKDIR}/dotnet-install.sh ${D}/${datadir}/dotnet-install.sh
+    install -m 0770 ${WORKDIR}/getvsdbgsh ${D}/${datadir}/getvsdbg.sh
 }
