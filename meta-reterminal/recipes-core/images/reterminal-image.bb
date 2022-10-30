@@ -18,7 +18,7 @@ DISTRO_FEATURES:append = " bluetooth wifi"
 #
 # Extra image configuration defaults
 #
-EXTRA_IMAGE_FEATURES ?= " ssh-server-openssh package-management"
+EXTRA_IMAGE_FEATURES ?= "ssh-server-openssh package-management"
 
 #
 # Enable u-boot kernel image
@@ -37,7 +37,6 @@ CORE_OS = "\
 	kernel-modules \
 	linux-firmware-rpidistro-bcm43455 \
 	seeed-linux-dtoverlays \
-    resize-rootfs \
 	bluez5 \
     openssh \ 
 	openssh-sftp-server \
@@ -46,10 +45,12 @@ CORE_OS = "\
 "
 EXTRA_TOOLS = "\
 	apt \
+	zlib \
 	bash \
 	nano \
 	curl \
 	mc \
+	dotnet \
 	wpa-supplicant \
 	i2c-tools \
 "
@@ -72,4 +73,4 @@ IMAGE_FSTYPES = "wic"
 # IMAGE_ROOTFS_EXTRA_SPACE = "53248"
 # IMAGE_ROOTFS_MAXSIZE = "372736"
 
-#IMAGE_ROOTFS_EXTRA_SPACE = "102400"
+IMAGE_ROOTFS_SIZE = "10240" 
