@@ -37,16 +37,19 @@ CORE_OS = "\
 	kernel-modules \
 	linux-firmware-rpidistro-bcm43455 \
 	seeed-linux-dtoverlays \
-    bluez5 \
+    resize-rootfs \
+	bluez5 \
     openssh \ 
 	openssh-sftp-server \
 	openssl \
     firewall \
 "
 EXTRA_TOOLS = "\
+	apt \
 	bash \
 	nano \
 	curl \
+	mc \
 	wpa-supplicant \
 	i2c-tools \
 "
