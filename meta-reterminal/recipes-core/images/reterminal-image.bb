@@ -18,7 +18,7 @@ DISTRO_FEATURES:append = " bluetooth wifi"
 #
 # Extra image configuration defaults
 #
-EXTRA_IMAGE_FEATURES ?= "ssh-server-openssh package-management"
+EXTRA_IMAGE_FEATURES ?= "ssh-server-openssh"
 
 #
 # Enable u-boot kernel image
@@ -38,32 +38,36 @@ CORE_OS = "\
 	linux-firmware-rpidistro-bcm43455 \
 	seeed-linux-dtoverlays \
 	bluez5 \
+	u-boot-splash \
     openssh \ 
 	openssh-sftp-server \
 	openssl \
-    firewall \
 "
-EXTRA_TOOLS = "\
-	apt \
-	zlib \
-	bash \
-	nano \
-	curl \
-	mc \
-	dotnet \
+
+HARDWARE_TOOLS = "\
 	wpa-supplicant \
 	i2c-tools \
 "
 
+EXTRA_TOOLS = "\
+	bash \
+	nano \
+	curl \
+	dotnet \
+	dotnet-scripts \
+	vsdbg-dbg \
+"
+
 IMAGE_INSTALL:append = " \
     ${CORE_OS} \
-    ${EXTRA_TOOLS} \
+    ${HARDWARE_TOOLS} \
+	${EXTRA_TOOLS} \
 "
 
 #
 # Enable wic format for flashing to sdcard
 #
-IMAGE_FSTYPES = "wic"
+IMAGE_FSTYPES = "wic.zip"
 
 #
 # Set the size of root file system to 32GB
@@ -73,4 +77,4 @@ IMAGE_FSTYPES = "wic"
 # IMAGE_ROOTFS_EXTRA_SPACE = "53248"
 # IMAGE_ROOTFS_MAXSIZE = "372736"
 
-IMAGE_ROOTFS_SIZE = "10240" 
+IMAGE_ROOTFS_SIZE = "5120" 
