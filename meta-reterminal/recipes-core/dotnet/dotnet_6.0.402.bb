@@ -3,13 +3,6 @@ HOMEPAGE = "https://dotnet.microsoft.com/en-us/download/dotnet/6.0"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-DEPENDS = "patchelf-native"
-
-RDEPENDS:${PN} = "\
-    icu \
-    libgssapi-krb5 \
-    zlib \
-"
 SRC_FETCH_ID = "234daf6a-5e12-4fa3-a73b-b12db44a3154/df7c012e5e4e2cc510de9226425dad88"
 
 SRC_URI[sha256sum] = "a5fe4d69a9c83f37509129c25dcf324d8407a60b5e7e8ec24a5f925550139c74"
@@ -19,6 +12,14 @@ DOTNET_RUNTIME = "6.0.10"
 DOTNET_ASP = "6.0.10"
 DOTNET_TEMPLATES = "6.0.10"
 DOTNET_MANIFESTS = "6.0.300"
+
+DEPENDS = "patchelf-native"
+
+RDEPENDS:${PN} = "\
+    icu \
+    libgssapi-krb5 \
+    zlib \
+"
 
 FILES:${PN} += "\
     ${datadir}/dotnet/dotnet \
