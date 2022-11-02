@@ -17,3 +17,11 @@ $ ./run-build.sh
 ## Links
 https://docs.yoctoproject.org/dev-manual/index.html
 https://www.lancesimms.com/RaspberryPi/HackingRaspberryPi4WithYocto_Introduction.html
+
+
+Use ip command to bring up the wifi interface:
+sudo ip link set wlan0 up
+/sbin/ifconfig wlan0 up
+iw commands
+
+iw dev wlan0 scan
