@@ -136,13 +136,6 @@
 		};
 	};
 	
-	fragment@6 {
-		target = <&gpio_keys>;
-		patch:__overlay__ {
-			pinctrl-0 = <>;
-		};
-	}; 
-
 	__overrides__ {
 		int = <&mcp23008_pins>,"brcm,pins:0",
 				<&mcp23008_irq>,"interrupts:0";
