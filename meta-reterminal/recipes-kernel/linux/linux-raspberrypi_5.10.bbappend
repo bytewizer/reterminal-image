@@ -10,7 +10,7 @@ do_configure:append(){
                 rm -r ${WORKDIR}/seeed/
         fi
         mkdir -p ${WORKDIR}/seeed/
-        wget -P ${WORKDIR}/seeed/ https://raw.githubusercontent.com/bytewizer/reterminal-image/master/meta-reterminal/recipes-kernel/seeed-linux-dtoverlays/files/reTerminal-overlay.dts
+        wget -P ${WORKDIR}/seeed/ https://raw.githubusercontent.com/bytewizer/reterminal-image/master/meta-reterminal/recipes-kernel/seeed-linux-dtoverlays/files/overlays/rpi/reTerminal-overlay.dts
         cp ${WORKDIR}/seeed/reTerminal-overlay.dts ${S}/arch/arm/boot/dts/overlays/
 }
 

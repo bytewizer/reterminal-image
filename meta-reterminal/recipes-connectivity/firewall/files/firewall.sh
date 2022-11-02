@@ -5,7 +5,14 @@ start() {
     iptables -P FORWARD DROP
     iptables -P OUTPUT ACCEPT
 
+    iptables -A INPUT -p tcp -m tcp --dport 162 -j ACCEPT 
+    iptables -A INPUT -p udp -m udp --dport 162 -j ACCEPT 
+    iptables -A INPUT -p tcp -m tcp --dport 14545 -j ACCEPT 
+    iptables -A INPUT -p tcp -m tcp --dport 14161 -j ACCEPT 
+    iptables -A INPUT -p tcp -m tcp --dport 5634 -j ACCEPT 
     iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+    iptables -A INPUT -p icmp -j ACCEPT 
+    iptables -A INPUT -i lo -j ACCEPT 
     iptables -A INPUT -s 127.0.0.0/8 -j ACCEPT
     iptables -A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --update --seconds 300 --hitcount 3 --name ssh --mask 255.255.255.255 --rsource -j REJECT --reject-with tcp-reset
     iptables -A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --set --name ssh --mask 255.255.255.255 --rsource
